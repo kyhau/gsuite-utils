@@ -1,5 +1,5 @@
 from __future__ import print_function
-import datetime
+from datetime import datetime
 import httplib2
 import sys
 from apiclient import discovery
@@ -34,7 +34,7 @@ def gcalendar_events(service):
     :param service: a Google Calendar API service object
     :return: a list
     """
-    now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
+    now = datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print('Getting the upcoming 10 events')
     eventsResult = service.events().list(
         calendarId='primary',
@@ -55,9 +55,28 @@ def main():
     if not events:
         print('No upcoming events found.')
     for event in events:
-        start = event['start'].get('dateTime', event['start'].get('date'))
-        end = event['end'].get('dateTime', event['end'].get('date'))
-        print(start, end, event['summary'], event['status'])
+        start_time = event['start'].get('dateTime', event['start'].get('date'))
+        end_time = event['end'].get('dateTime', event['end'].get('date'))
+        duration = calc_duration(start_time, end_time)
+        print(start_time, end_time, duration, event['summary'], event['status'])
+
+
+def calc_duration(start_time, end_time):
+    DATETIME_STR_FORMAT_1 = '%Y-%m-%dT%H:%M:%S+11:00'
+    DATETIME_STR_FORMAT_2 = '%Y-%m-%dT%H:%M:%S+10:00'
+
+    t_delta_secs = 3600 # default to 1 hour
+
+    for f in [DATETIME_STR_FORMAT_1, DATETIME_STR_FORMAT_2]:
+        try:
+            end_dt = datetime.strptime(end_time, f)
+            start_dt = datetime.strptime(start_time, f)
+            t_delta_secs = (end_dt - start_dt).seconds
+            break
+        except:
+            pass
+
+    return '{:02d}:{:02d}'.format(t_delta_secs/3600, t_delta_secs%3600/60)
 
 if __name__ == '__main__':
     sys.exit(main())
