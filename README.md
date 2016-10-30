@@ -1,9 +1,9 @@
 # gsuite-utils
 
-This repo is created for investigating 
+This repo contains simple scripts using 
 
-1. how the Google Apps Admin SDK - Reports API
-2. how the Google Calendar API
+1. Google Apps Admin SDK (Reports API) to retreive last N google drive activities
+2. Google Calendar API to retrieve my next N calendar events (accepted invitations)
 
 Please see [Quick Start: Google Apps Admin SDK - Reports API](https://developers.google.com/admin-sdk/reports/v1/quickstart/python) for the steps about 
 
@@ -19,10 +19,13 @@ Please see [Quick Start: Google Apps Admin SDK - Reports API](https://developers
     virtualenv env
     . env/bin/activate
     pip install -e .
-    python gdrive_utils/gdrive.py
-    python gdrive_utils/gcalendar.py
+    
+    python gsuite_utils/gdrive.py
+    python gsuite_utils/gcalendar.py
+    
     # for running pytest
     pip install -r requirements-test.txt
+    
     # for full testing with tox and building wheel
     ./test.sh
 
@@ -31,9 +34,12 @@ Please see [Quick Start: Google Apps Admin SDK - Reports API](https://developers
     virtualenv env
     env\Scripts\activate
     pip install -e .
-    python gdrive_utils\gdrive.py
-    python gdrive_utils\gcalendar.py
+    
+    python gsuite_utils\gdrive.py
+    python gsuite_utils\gcalendar.py
+    
     # for running pytest
     pip install -r requirements-test.txt
+    
     # for full testing with tox and building wheel
     test.bat
