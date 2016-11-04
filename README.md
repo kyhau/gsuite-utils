@@ -1,5 +1,7 @@
 # gsuite-utils
 
+[![Build Status](https://travis-ci.org/kyhau/gsuite-utils.svg?branch=master)](https://travis-ci.org/kyhau/gsuite-utils)
+
 This repo contains simple scripts using 
 
 1. Google Apps Admin SDK (Reports API) to retreive last N google drive activities
