@@ -1,6 +1,7 @@
 # gsuite-utils
 
 [![Build Status](https://travis-ci.org/kyhau/gsuite-utils.svg?branch=master)](https://travis-ci.org/kyhau/gsuite-utils)
+[![codecov](https://codecov.io/gh/kyhau/gsuite-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/kyhau/gsuite-utils)
 
 This repo contains simple scripts using 
 
