@@ -5,7 +5,8 @@
 This repo contains simple scripts using 
 
 1. Google Apps Admin SDK (Reports API) to retreive last N google drive activities
-2. Google Calendar API to retrieve my next N calendar events (accepted invitations)
+1. Google Calendar API to retrieve my next N calendar events (accepted invitations)
+1. Google Groups and GroupsSettings
 
 Please see [Google Apps Admin SDK - Reports API](https://developers.google.com/admin-sdk/reports/v1/quickstart/python) 
 or [Google Calendar API](https://developers.google.com/google-apps/calendar/quickstart/python) for the steps about 
@@ -27,10 +28,10 @@ or [Google Calendar API](https://developers.google.com/google-apps/calendar/quic
     python gsuite_utils/gcalendar.py
     
     # for running pytest
-    pip install -r requirements-test.txt
+    pip install -r requirements-build.txt
     
     # for full testing with tox and building wheel
-    ./test.sh
+    tox -r
 
 **Windows**
 
@@ -42,7 +43,7 @@ or [Google Calendar API](https://developers.google.com/google-apps/calendar/quic
     python gsuite_utils\gcalendar.py
     
     # for running pytest
-    pip install -r requirements-test.txt
+    pip install -r requirements-build.txt
     
     # for full testing with tox and building wheel
-    test.bat
+    tox -r
