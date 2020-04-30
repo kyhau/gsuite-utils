@@ -13,7 +13,7 @@ __version__ = "0.1.0.dev1"
 __summary__ = "G Suite Utils."
 __author__ = "Kay Hau"
 __requirements__ = [
-    'google-api-python-client==1.6.7'
+    'google-api-python-client==1.8.2'
 ]
 
 with open(os.path.join(base_dir, "README.md")) as f:
