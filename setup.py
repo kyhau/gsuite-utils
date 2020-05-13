@@ -1,4 +1,3 @@
-from __future__ import absolute_import, division, print_function
 from setuptools import setup, find_packages
 import os
 
@@ -13,7 +12,8 @@ __version__ = "0.1.0.dev1"
 __summary__ = "G Suite Utils."
 __author__ = "Kay Hau"
 __requirements__ = [
-    'google-api-python-client==1.8.3'
+    "google-api-python-client==1.8.3",
+    "oauth2client==4.1.3",
 ]
 
 with open(os.path.join(base_dir, "README.md")) as f:
