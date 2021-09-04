@@ -12,7 +12,7 @@ __version__ = "0.1.0.dev1"
 __summary__ = "G Suite Utils."
 __author__ = "Kay Hau"
 __requirements__ = [
-    "google-api-python-client==2.19.0",
+    "google-api-python-client==2.19.1",
     "oauth2client==4.1.3",
 ]
 
