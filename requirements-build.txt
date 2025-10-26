@@ -1,7 +1,7 @@
 # This file is used for running tox, flake8 and building the wheel
-pip~=25.2
+pip~=25.3
 black
 logilab-common~=2.1
 m2r~=0.3
-tox~=4.31
+tox~=4.32
 virtualenv~=20.35
